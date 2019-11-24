@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { signup } from '../actions/signup';
 import { Button, Form, Col } from 'react-bootstrap/';
+import { Link } from 'react-router-dom';
 
 class SignUp extends React.Component {
   state = { email: '', password: '', username: '' };
@@ -45,12 +46,6 @@ class SignUp extends React.Component {
               />
             </Col>
             <Col>
-              {/* <Form.Control
-                onChange={this.onChange}
-                value={this.state.password}
-                name="password"
-                placeholder="password"
-              /> */}
               <Form.Group controlId="formBasicPassword">
                 <Form.Control
                   onChange={this.onChange}
@@ -66,6 +61,7 @@ class SignUp extends React.Component {
             </Col>
           </Form.Row>
         </Form>
+        <Link to="/">Already logged in?</Link>
       </div>
     );
   }
