@@ -8,6 +8,7 @@ export default function PostsList(props) {
         <div key={post.id}>
           <span>{post.title}:</span>
           <span>{post.message}</span>
+          <button onClick={() => props.deletePost(post.id)}>Delete</button>
         </div>
       ))}
     </div>

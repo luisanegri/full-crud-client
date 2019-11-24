@@ -4,6 +4,11 @@ export default function(state = [], action = {}) {
       return [...state, action.payload];
     case 'READ_POSTS':
       return action.payload;
+    case 'DELETE_POST':
+      // only delete from page when refreshing
+      const newState = [...state];
+      newState.filter(post => post.id !== action.payload);
+      return newState;
     default:
       return state;
   }
